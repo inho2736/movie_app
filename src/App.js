@@ -2,6 +2,7 @@ import React from 'react';
 import { HashRouter, Route } from "react-router-dom";
 import Home from "./routes/Home";
 import About from "./routes/About";
+import Detail from "./routes/Detail";
 import Navigation from "./components/Navigation";
 import "./App.css";
 
@@ -12,10 +13,12 @@ function App(){
   // ex> /home , /home/introduction 이고 url이 /home이면 둘다렌더링
   // exact옵션으로 진짜 딱 일치했을때만 렌더링하게 만들자
   return (
+    //라우터마다 props 보내줌 (ex about으로)
     <HashRouter>
       <Navigation />
       <Route path="/" exact={true} component={Home} />
       <Route path="/about" component={About} />
+      <Route path="/movie/:id" component={Detail} />
     </HashRouter>
   );
 }
