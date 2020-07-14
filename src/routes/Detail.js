@@ -6,6 +6,7 @@ class Detail extends React.Component {
     //undefined임
     //props의 history에 있는 함수들로 리다이렉트 하기
     const { location, history } = this.props;
+    // console.log(location.state);
     if (location.state === undefined) {
       history.push("/");
     }
